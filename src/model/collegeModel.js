@@ -13,9 +13,14 @@ const collegeSchema = new mongoose.Schema(
       required: true,
     },
 
-    logoLink: {
-      url:"https://functionup.s3.ap-south-1.amazonaws.com/colleges/iith.png",
-    },
+    
+ logoLink: {
+
+  type:String,
+  required:true,
+  match:[/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,'Enter correct url!']
+
+ }, 
 
     isDeleted:{
       type: Boolean,
